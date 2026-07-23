@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Ofícios | Construção Civil, Remodelações e Pladur em Estremoz</title>
+<meta name="description" content="7 Ofícios LDA - Construção civil, remodelação de edifícios, canalizações, esgotos e pladur em Estremoz e arredores. Avaliação 5.0 no Google. Orçamentos gratuitos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" rel="stylesheet">
+<style>
+  :root{
+    --verde: #6FA83B;
+    --verde-escuro: #4F7E29;
+    --verde-suave: #EEF5E4;
+    --preto: #14171A;
+    --antracite: #1E2226;
+    --cinza: #6B7075;
+    --cinza-claro: #F6F7F5;
+    --borda: #E7E9E5;
+    --branco: #FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Manrope',Arial,sans-serif;color:var(--preto);line-height:1.65;background:var(--branco);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Poppins',sans-serif;letter-spacing:-0.01em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+  .icon-svg{width:26px;height:26px;stroke:var(--verde-escuro);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* HEADER */
+  header{position:sticky;top:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda);z-index:200;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1200px;margin:0 auto;}
+  .nav-logo img{height:42px;width:auto;}
+  .nav-links{display:flex;gap:34px;font-weight:600;font-size:0.92rem;color:var(--antracite);}
+  .nav-links a{position:relative;padding:4px 0;transition:color .2s;}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--verde);transition:width .25s;}
+  .nav-links a:hover{color:var(--verde-escuro);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-phone{background:var(--preto);color:var(--branco);padding:11px 22px;border-radius:4px;font-weight:700;white-space:nowrap;transition:background .2s;font-size:0.9rem;letter-spacing:0.2px;}
+  .nav-phone:hover{background:var(--verde-escuro);}
+
+  /* HERO */
+  .hero{position:relative;background:var(--preto);color:var(--branco);padding:110px 32px 90px;overflow:hidden;}
+  .hero-bp{position:absolute;inset:0;opacity:0.14;
+    background-image:linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size:44px 44px;}
+  .hero::after{content:'';position:absolute;top:-160px;right:-160px;width:520px;height:520px;background:radial-gradient(circle, rgba(111,168,59,0.22) 0%, transparent 70%);}
+  .hero-inner{position:relative;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:64px;}
+  .hero-text{flex:1.25;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);padding:7px 16px;border-radius:100px;font-size:0.8rem;font-weight:600;letter-spacing:0.3px;margin-bottom:22px;color:#dcdcdc;}
+  .badge .stars{color:#F5B301;letter-spacing:1px;font-size:0.85rem;}
+  .hero-text h1{font-size:2.9rem;font-weight:700;margin-bottom:22px;line-height:1.16;}
+  .hero-text h1 span{color:var(--verde);}
+  .hero-text p{color:#c4c8cc;font-size:1.08rem;margin-bottom:34px;max-width:540px;font-weight:400;}
+  .btn-group{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:42px;}
+  .btn{padding:15px 30px;border-radius:5px;font-weight:700;display:inline-block;transition:all .2s;border:none;cursor:pointer;font-size:0.95rem;letter-spacing:0.2px;}
+  .btn-primary{background:var(--verde);color:var(--branco);}
+  .btn-primary:hover{background:var(--verde-escuro);box-shadow:0 10px 24px rgba(111,168,59,0.3);}
+  .btn-outline{border:1.5px solid rgba(255,255,255,0.35);color:var(--branco);}
+  .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.6);}
+
+  .trust-row{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.14);padding-top:26px;}
+  .trust-item{display:flex;flex-direction:column;gap:2px;padding-right:36px;margin-right:36px;border-right:1px solid rgba(255,255,255,0.14);}
+  .trust-item:last-child{border-right:none;}
+  .trust-item strong{font-family:'Poppins',sans-serif;font-size:1.3rem;color:var(--branco);}
+  .trust-item span{font-size:0.78rem;color:#a5a9ad;}
+
+  .hero-visual{flex:1;position:relative;}
+  .hero-visual .frame{position:relative;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.1);}
+  .hero-visual img{height:380px;width:100%;object-fit:cover;}
+  .hero-visual .float-card{position:absolute;bottom:-22px;left:-22px;background:var(--branco);color:var(--preto);border-radius:6px;padding:18px 22px;box-shadow:0 16px 36px rgba(0,0,0,0.25);display:flex;align-items:center;gap:14px;}
+  .hero-visual .float-card .n{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;color:var(--verde-escuro);}
+  .hero-visual .float-card .t{font-size:0.78rem;color:var(--cinza);line-height:1.3;}
+
+  .faixa{background:var(--verde);color:var(--branco);padding:13px 0;text-align:center;font-weight:700;letter-spacing:0.6px;font-size:0.85rem;overflow:hidden;white-space:nowrap;text-transform:uppercase;}
+
+  section{padding:96px 32px;}
+  .eyebrow{display:flex;align-items:center;gap:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;font-size:0.78rem;color:var(--verde-escuro);margin-bottom:14px;}
+  .eyebrow::before{content:'';width:26px;height:2px;background:var(--verde);}
+  .section-title{max-width:640px;margin-bottom:56px;}
+  .section-title.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-title.center .eyebrow{justify-content:center;}
+  .section-title h2{font-size:2.1rem;font-weight:700;}
+  .section-title p{color:var(--cinza);margin-top:14px;font-size:1rem;}
+
+  /* SERVICOS */
+  .servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto;}
+  .servico-card{background:var(--branco);border:1px solid var(--borda);border-radius:8px;padding:34px 28px;transition:transform .25s, box-shadow .25s, border-color .25s;}
+  .servico-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(20,23,26,0.08);border-color:transparent;}
+  .servico-card .icon-badge{width:52px;height:52px;border-radius:8px;background:var(--verde-suave);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .servico-card h3{font-size:1.08rem;margin-bottom:10px;color:var(--preto);font-weight:600;}
+  .servico-card p{color:var(--cinza);font-size:0.92rem;}
+
+  /* PROCESSO */
+  .processo{background:var(--cinza-claro);}
+  .processo-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1200px;margin:0 auto;}
+  .processo-grid::before{content:'';position:absolute;top:27px;left:12%;right:12%;height:1px;background:var(--borda);z-index:0;}
+  .processo-step{text-align:left;position:relative;z-index:1;}
+  .processo-step .num{width:54px;height:54px;border-radius:50%;background:var(--preto);color:var(--verde);font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:5px solid var(--cinza-claro);}
+  .processo-step h3{font-size:1.02rem;margin-bottom:8px;font-weight:600;}
+  .processo-step p{color:var(--cinza);font-size:0.88rem;}
+
+  /* SOBRE + CONTADORES */
+  .sobre-inner{max-width:1200px;margin:0 auto;display:flex;gap:64px;align-items:center;}
+  .sobre-text{flex:1;}
+  .sobre-text p{margin-bottom:16px;color:#3a3d40;font-size:1rem;}
+  .sobre-stats{display:flex;gap:0;margin-top:32px;border-top:1px solid var(--borda);padding-top:28px;}
+  .stat{text-align:left;padding-right:36px;margin-right:36px;border-right:1px solid var(--borda);}
+  .stat:last-child{border-right:none;}
+  .stat strong{display:block;font-family:'Poppins',sans-serif;font-size:2rem;color:var(--preto);font-weight:700;}
+  .stat span{font-size:0.8rem;color:var(--cinza);}
+  .sobre-img{flex:1;position:relative;}
+  .sobre-img img{border-radius:8px;box-shadow:0 20px 44px rgba(20,23,26,0.14);}
+  .sobre-img::before{content:'';position:absolute;top:-18px;left:-18px;width:100%;height:100%;border:2px solid var(--verde);border-radius:8px;z-index:-1;}
+
+  /* PORTFOLIO */
+  .galeria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1080px;margin:0 auto;}
+  .galeria-item{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 16px 34px rgba(20,23,26,0.12);}
+  .galeria-item img{height:380px;width:100%;object-fit:cover;transition:transform .5s ease;}
+  .galeria-item:hover img{transform:scale(1.05);}
+  .galeria-caption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg, rgba(0,0,0,0.8), transparent);color:var(--branco);padding:22px;}
+  .galeria-caption .tag2{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde);font-weight:700;display:block;margin-bottom:4px;}
+  .galeria-caption .title2{font-weight:600;font-size:1rem;}
+
+  /* AREA */
+  .area{background:var(--preto);color:var(--branco);text-align:center;position:relative;}
+  .area .eyebrow{color:var(--verde);justify-content:center;}
+  .area h2{font-size:1.9rem;margin-bottom:16px;font-weight:700;}
+  .area p{color:#b6bac0;max-width:620px;margin:0 auto;font-size:1rem;}
+
+  /* AVALIACAO */
+  .avaliacao{text-align:center;}
+  .avaliacao-card{max-width:560px;margin:0 auto;background:var(--cinza-claro);border:1px solid var(--borda);border-radius:10px;padding:48px 40px;}
+  .avaliacao .stars-big{font-size:1.6rem;color:#F5B301;letter-spacing:6px;margin-bottom:16px;}
+  .avaliacao h2{font-size:1.5rem;margin-bottom:10px;font-weight:700;}
+  .avaliacao p{color:var(--cinza);margin-bottom:26px;font-size:0.96rem;}
+
+  /* CONTACTO */
+  .contacto{background:var(--antracite);color:var(--branco);}
+  .contacto-inner{max-width:1200px;margin:0 auto;display:flex;gap:56px;flex-wrap:wrap;}
+  .contacto-col{flex:1;min-width:260px;}
+  .contacto-col .eyebrow{color:var(--verde);}
+  .contacto-col h2{font-size:1.9rem;margin-bottom:16px;font-weight:700;}
+  .contacto-col p{color:#b6bac0;margin-bottom:30px;font-size:0.98rem;}
+  .contacto-item{display:flex;gap:16px;align-items:center;margin-bottom:22px;}
+  .contacto-item .ic-wrap{width:40px;height:40px;border-radius:6px;background:rgba(111,168,59,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .contacto-item .ic-wrap svg{width:18px;height:18px;stroke:var(--verde);fill:none;stroke-width:1.8;}
+  .contacto-item a, .contacto-item span{color:#dcdfe2;font-size:0.95rem;}
+  .contacto-item a:hover{color:var(--verde);}
+
+  .form-box{background:#262b30;border-radius:10px;padding:36px;flex:1.3;min-width:300px;border:1px solid rgba(255,255,255,0.06);}
+  .form-box h3{margin-bottom:8px;font-weight:700;font-size:1.2rem;}
+  .form-box .sub{color:#b6bac0;margin-bottom:26px;font-size:0.92rem;}
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block;font-size:0.8rem;color:#a5a9ad;margin-bottom:7px;font-weight:600;}
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%;padding:12px 14px;border-radius:5px;border:1px solid #3a3f45;
+    background:#1a1e22;color:var(--branco);font-family:inherit;font-size:0.94rem;transition:border-color .2s;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{outline:none;border-color:var(--verde);}
+  .form-row textarea{resize:vertical;min-height:90px;}
+  .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-submit{width:100%;background:var(--verde);color:var(--branco);border:none;padding:15px 26px;border-radius:5px;font-weight:700;font-size:0.98rem;cursor:pointer;transition:background .2s;}
+  .form-submit:hover{background:var(--verde-escuro);}
+  .form-note{font-size:0.76rem;color:#7d8186;margin-top:14px;}
+  .form-success{display:none;background:rgba(111,168,59,0.14);border:1px solid var(--verde);color:#cfe6ba;padding:16px;border-radius:6px;margin-bottom:18px;font-size:0.92rem;}
+
+  footer{background:var(--preto);color:#8a8e92;text-align:center;padding:26px;font-size:0.82rem;border-top:1px solid rgba(255,255,255,0.06);}
+  footer a{color:var(--verde);}
+
+  @media (max-width: 980px){
+    .nav-links{display:none;}
+    .hero-inner{flex-direction:column;text-align:center;}
+    .hero-text p{margin:0 auto 34px;}
+    .btn-group{justify-content:center;}
+    .trust-row{justify-content:center;}
+    .trust-item{border-right:none;padding-right:0;margin-right:20px;margin-bottom:12px;}
+    .servicos-grid, .processo-grid{grid-template-columns:1fr 1fr;}
+    .processo-grid::before{display:none;}
+    .sobre-inner{flex-direction:column;}
+    .sobre-stats{justify-content:center;flex-wrap:wrap;}
+    .galeria-grid{grid-template-columns:1fr;}
+    .hero-visual{margin-top:20px;}
+  }
+  @media (max-width: 560px){
+    .servicos-grid, .processo-grid, .form-grid-2{grid-template-columns:1fr;}
+    .hero-text h1{font-size:2.1rem;}
+    section{padding:70px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="nav-logo"><img src="images/logo.jpg" alt="7 Ofícios logo"></div>
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como Trabalhamos</a>
+      <a href="#galeria">Trabalhos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="tel:+351961203356" class="nav-phone">961 203 356</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-bp"></div>
+  <div class="hero-inner">
+    <div class="hero-text" data-aos="fade-right">
+      <div class="badge"><span class="stars">★★★★★</span> 5.0 no Google · Estremoz</div>
+      <h1>Construção e remodelações feitas para <span>durar</span></h1>
+      <p>Construção civil, remodelação de edifícios, canalizações, esgotos e pladur em Estremoz e arredores. Orçamento detalhado, material incluído explicado, sem surpresas.</p>
+      <div class="btn-group">
+        <a href="#contacto" class="btn btn-primary">Pedir Orçamento Grátis</a>
+        <a href="#galeria" class="btn btn-outline">Ver Trabalhos Feitos</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><strong>5.0★</strong><span>Avaliação Google</span></div>
+        <div class="trust-item"><strong>880+</strong><span>Seguidores Facebook</span></div>
+        <div class="trust-item"><strong>100%</strong><span>Orçamentos Gratuitos</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" data-aos="fade-left">
+      <div class="frame">
+        <img src="images/construcao.jpg" alt="Obra 7 Ofícios em Estremoz">
+      </div>
+      <div class="float-card">
+        <div class="n">50/30/20</div>
+        <div class="t">Pagamento faseado<br>ao longo da obra</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="faixa">
+  Construção Civil &nbsp;·&nbsp; Remodelação de Edifícios &nbsp;·&nbsp; Canalizações &nbsp;·&nbsp; Esgotos &nbsp;·&nbsp; Pladur &nbsp;·&nbsp; Pinturas
+</div>
+
+<section id="servicos">
+  <div class="section-title center" data-aos="fade-up" style="margin-left:auto;margin-right:auto;">
+    <div class="eyebrow">O Que Fazemos</div>
+    <h2>Os Nossos Serviços</h2>
+    <p>Cada serviço é orçamentado com o material discriminado, para saber exatamente pelo que está a pagar.</p>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></div>
+      <h3>Construção Civil</h3>
+      <p>Obras de raiz e trabalhos gerais de construção, com materiais de qualidade e prazos cumpridos.</p>
+    </div>
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg></div>
+      <h3>Remodelação de Edifícios</h3>
+      <p>Renovação total ou parcial de casas e edifícios, do telhado ao acabamento final.</p>
+    </div>
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="160">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <h3>Canalizações</h3>
+      <p>Instalação e reparação de canalizações de água, sempre com material certificado.</p>
+    </div>
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="0">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2.7s6 6.2 6 10.3a6 6 0 01-12 0c0-4.1 6-10.3 6-10.3z"/></svg></div>
+      <h3>Esgotos</h3>
+      <p>Redes de esgotos e reparações para o correto escoamento de águas em toda a habitação.</p>
+    </div>
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="80">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3>Pladur</h3>
+      <p>Tetos falsos, divisórias e isolamento em pladur, orçamentados por m² com todo o material incluído.</p>
+    </div>
+    <div class="servico-card" data-aos="fade-up" data-aos-delay="160">
+      <div class="icon-badge"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div>
+      <h3>Pinturas</h3>
+      <p>Pintura de interiores e exteriores, incluindo isolamento primário, a dar o acabamento final à obra.</p>
+    </div>
+  </div>
+</section>
+
+<section class="processo" id="processo">
+  <div class="section-title center" data-aos="fade-up" style="margin-left:auto;margin-right:auto;">
+    <div class="eyebrow">Como Trabalhamos</div>
+    <h2>Um processo simples e transparente</h2>
+  </div>
+  <div class="processo-grid">
+    <div class="processo-step" data-aos="fade-up" data-aos-delay="0">
+      <div class="num">1</div>
+      <h3>Contacto e Visita</h3>
+      <p>Vamos ao local avaliar a obra e perceber exatamente o que precisa.</p>
+    </div>
+    <div class="processo-step" data-aos="fade-up" data-aos-delay="100">
+      <div class="num">2</div>
+      <h3>Orçamento Detalhado</h3>
+      <p>Enviamos um orçamento gratuito com tarefas e material discriminados.</p>
+    </div>
+    <div class="processo-step" data-aos="fade-up" data-aos-delay="200">
+      <div class="num">3</div>
+      <h3>Execução da Obra</h3>
+      <p>Pagamento faseado (50% início, 30% a meio, 20% na conclusão) e acompanhamento até ao fim.</p>
+    </div>
+    <div class="processo-step" data-aos="fade-up" data-aos-delay="300">
+      <div class="num">4</div>
+      <h3>Entrega Final</h3>
+      <p>Obra concluída, limpa e pronta a usar, com todos os pontos do orçamento cumpridos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-img" data-aos="fade-right">
+      <img src="images/casa-banho.jpg" alt="Trabalho de remodelação em Estremoz">
+    </div>
+    <div class="sobre-text" data-aos="fade-left">
+      <div class="eyebrow">Sobre Nós</div>
+      <h2 style="font-size:1.95rem;font-weight:700;margin-bottom:18px;">7 Ofícios LDA</h2>
+      <p>A 7 Ofícios é uma empresa de prestação de serviços dedicada à construção civil, remodelação de edifícios, canalizações, esgotos e pladur, sediada em Estremoz.</p>
+      <p>Cada orçamento discrimina as tarefas e o material incluído, e o pagamento é feito em fases ao longo da obra, para que saiba sempre em que ponto está o seu projeto.</p>
+      <div class="sobre-stats">
+        <div class="stat"><strong class="counter" data-target="5">0</strong><span>★ Avaliação Google</span></div>
+        <div class="stat"><strong class="counter" data-target="880">0</strong><span>Seguidores Facebook</span></div>
+        <div class="stat"><strong class="counter" data-target="100">0</strong><span>% Orçamentos Grátis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="section-title center" data-aos="fade-up" style="margin-left:auto;margin-right:auto;">
+    <div class="eyebrow">Portefólio</div>
+    <h2>Trabalhos Realizados</h2>
+    <p>Alguns dos projetos executados em Estremoz. Mais fotos disponíveis a pedido.</p>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item" data-aos="zoom-in">
+      <img src="images/construcao.jpg" alt="Obra de remodelação - Estremoz">
+      <div class="galeria-caption"><span class="tag2">Remodelação</span><span class="title2">Estremoz</span></div>
+    </div>
+    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="120">
+      <img src="images/casa-banho.jpg" alt="Remodelação de casa de banho - Estremoz">
+      <div class="galeria-caption"><span class="tag2">Casa de Banho</span><span class="title2">Estremoz</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="area" data-aos="fade-up">
+  <div class="eyebrow">Área de Atuação</div>
+  <h2>Estremoz e Arredores</h2>
+  <p>Trabalhamos em Estremoz e nos concelhos vizinhos do Alentejo. Se não tem a certeza se cobrimos a sua zona, ligue e falamos consigo.</p>
+</section>
+
+<section class="avaliacao" data-aos="fade-up">
+  <div class="avaliacao-card">
+    <div class="stars-big">★★★★★</div>
+    <h2>5.0 de avaliação no Google</h2>
+    <p>Já trabalhou connosco? A sua avaliação ajuda outros clientes a confiar no nosso trabalho.</p>
+    <a href="https://www.google.com/search?q=7+Oficios+LDA+Antonio+Pola+Paulo+Unipessoal" target="_blank" class="btn btn-primary" style="background:var(--verde);">Ver / Deixar Avaliação</a>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-col" data-aos="fade-right">
+      <div class="eyebrow">Contacto</div>
+      <h2>Fale Connosco</h2>
+      <p>Peça já o seu orçamento gratuito. Respondemos rapidamente.</p>
+      <div class="contacto-item">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <a href="tel:+351961203356">961 203 356</a>
+      </div>
+      <div class="contacto-item">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <a href="mailto:7oficioslda@gmail.com">7oficioslda@gmail.com</a>
+      </div>
+      <div class="contacto-item">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <span>R. de Estremoz 53, 7100-025</span>
+      </div>
+      <div class="contacto-item">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+        <a href="https://www.facebook.com/7oficioslda" target="_blank">facebook.com/7oficioslda</a>
+      </div>
+    </div>
+
+    <div class="form-box" data-aos="fade-left">
+      <h3>Pedir Orçamento Gratuito</h3>
+      <p class="sub">Preencha o formulário e entramos em contacto em breve. Sem compromisso.</p>
+
+      <div class="form-success" id="formSuccess">Pedido enviado com sucesso! Entraremos em contacto brevemente.</div>
+
+      <form name="orcamento" method="POST" data-netlify="true" netlify-honeypot="empresa" id="orcamentoForm">
+        <input type="hidden" name="form-name" value="orcamento">
+        <p style="display:none;">
+          <label>Não preencher: <input name="empresa"></label>
+        </p>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="form-row">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-row">
+          <label for="servico">Tipo de Serviço</label>
+          <select id="servico" name="servico">
+            <option>Construção Civil</option>
+            <option>Remodelação de Edifícios</option>
+            <option>Canalizações</option>
+            <option>Esgotos</option>
+            <option>Pladur</option>
+            <option>Pinturas</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="mensagem">Descreva o seu projeto</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Ex: remodelação de casa de banho, cerca de 6m²..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Enviar Pedido</button>
+        <p class="form-note">Ao enviar, aceita ser contactado pela 7 Ofícios sobre o seu pedido.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 7 Ofícios LDA — António Pola Paulo Unipessoal. Todos os direitos reservados.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, offset: 60 });
+
+  var counters = document.querySelectorAll('.counter');
+  var counted = false;
+  function runCounters(){
+    if(counted) return;
+    counted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var current = 0;
+      var step = Math.max(1, Math.ceil(target / 40));
+      var interval = setInterval(function(){
+        current += step;
+        if(current >= target){ current = target; clearInterval(interval); }
+        el.textContent = current;
+      }, 30);
+    });
+  }
+  var statsSection = document.querySelector('.sobre-stats');
+  if(statsSection){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ if(entry.isIntersecting) runCounters(); });
+    }, { threshold: 0.4 });
+    obs.observe(statsSection);
+  }
+
+  var form = document.getElementById('orcamentoForm');
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(function(){
+        document.getElementById('formSuccess').style.display = 'block';
+        form.reset();
+        form.style.display = 'none';
+      }).catch(function(){
+        alert('Não foi possível enviar agora. Por favor ligue para 961 203 356.');
+      });
+    });
+  }
+</script>
+</body>
+</html>
