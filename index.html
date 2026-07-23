@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>7 Ofícios | Construção Civil, Remodelações e Pladur em Estremoz</title>
 <meta name="description" content="7 Ofícios LDA - Construção civil, remodelação de edifícios, canalizações, esgotos e pladur em Estremoz e arredores. Avaliação 5.0 no Google. Orçamentos gratuitos.">
+<link rel="icon" type="image/png" sizes="32x32" href="icon7of/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icon7of/favicon-16x16.png">
+<link rel="shortcut icon" href="icon7of/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -117,13 +120,30 @@
   .sobre-img::before{content:'';position:absolute;top:-18px;left:-18px;width:100%;height:100%;border:2px solid var(--verde);border-radius:8px;z-index:-1;}
 
   /* PORTFOLIO */
-  .galeria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1080px;margin:0 auto;}
-  .galeria-item{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 16px 34px rgba(20,23,26,0.12);}
-  .galeria-item img{height:380px;width:100%;object-fit:cover;transition:transform .5s ease;}
-  .galeria-item:hover img{transform:scale(1.05);}
-  .galeria-caption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg, rgba(0,0,0,0.8), transparent);color:var(--branco);padding:22px;}
-  .galeria-caption .tag2{font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--verde);font-weight:700;display:block;margin-bottom:4px;}
-  .galeria-caption .title2{font-weight:600;font-size:1rem;}
+  .galeria-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;max-width:1200px;margin:0 auto;}
+  .galeria-item{position:relative;border-radius:8px;overflow:hidden;box-shadow:0 16px 34px rgba(20,23,26,0.12);cursor:pointer;aspect-ratio:4/3;background:var(--cinza-claro);}
+  .galeria-item img{height:100%;width:100%;object-fit:cover;transition:transform .5s ease;}
+  .galeria-item:hover img{transform:scale(1.08);}
+  .galeria-item .zoom-ic{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,23,26,0);transition:background .25s;}
+  .galeria-item:hover .zoom-ic{background:rgba(20,23,26,0.32);}
+  .galeria-item .zoom-ic svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:1.6;opacity:0;transform:scale(0.8);transition:all .25s;}
+  .galeria-item:hover .zoom-ic svg{opacity:1;transform:scale(1);}
+  .galeria-caption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg, rgba(0,0,0,0.82), transparent);color:var(--branco);padding:14px 14px 10px;font-size:0.78rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .25s;}
+  .galeria-item:hover .galeria-caption{opacity:1;transform:translateY(0);}
+  .galeria-more{max-width:1200px;margin:32px auto 0;text-align:center;}
+  .lightbox-caption{position:absolute;bottom:56px;left:50%;transform:translateX(-50%);color:#e7e9e5;font-size:0.88rem;max-width:80vw;text-align:center;}
+
+  /* LIGHTBOX */
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(10,12,14,0.95);z-index:500;align-items:center;justify-content:center;}
+  .lightbox.active{display:flex;}
+  .lightbox-img{max-width:88vw;max-height:82vh;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+  .lightbox-close{position:absolute;top:22px;right:28px;background:none;border:none;color:#fff;font-size:2.4rem;cursor:pointer;line-height:1;}
+  .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.25);color:#fff;width:50px;height:50px;border-radius:50%;font-size:1.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .lightbox-nav:hover{background:rgba(255,255,255,0.2);}
+  .lightbox-prev{left:20px;}
+  .lightbox-next{right:20px;}
+  .lightbox-count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#c4c8cc;font-size:0.85rem;letter-spacing:0.4px;}
+  @media (max-width:600px){.lightbox-nav{width:40px;height:40px;font-size:1.3rem;} .lightbox-close{top:12px;right:16px;font-size:2rem;}}
 
   /* AREA */
   .area{background:var(--preto);color:var(--branco);text-align:center;position:relative;}
@@ -321,6 +341,7 @@
       <p>Cada orçamento discrimina as tarefas e o material incluído, e o pagamento é feito em fases ao longo da obra, para que saiba sempre em que ponto está o seu projeto.</p>
       <div class="sobre-stats">
         <div class="stat"><strong class="counter" data-target="5">0</strong><span>★ Avaliação Google</span></div>
+        <div class="stat"><strong class="counter" data-target="37">0</strong><span>Obras Fotografadas</span></div>
         <div class="stat"><strong class="counter" data-target="880">0</strong><span>Seguidores Facebook</span></div>
         <div class="stat"><strong class="counter" data-target="100">0</strong><span>% Orçamentos Grátis</span></div>
       </div>
@@ -332,19 +353,19 @@
   <div class="section-title center" data-aos="fade-up" style="margin-left:auto;margin-right:auto;">
     <div class="eyebrow">Portefólio</div>
     <h2>Trabalhos Realizados</h2>
-    <p>Alguns dos projetos executados em Estremoz. Mais fotos disponíveis a pedido.</p>
+    <p>Mais de 35 fotos de obras reais em Estremoz e arredores. Clique numa foto para ver em tamanho grande.</p>
   </div>
-  <div class="galeria-grid">
-    <div class="galeria-item" data-aos="zoom-in">
-      <img src="images/construcao.jpg" alt="Obra de remodelação - Estremoz">
-      <div class="galeria-caption"><span class="tag2">Remodelação</span><span class="title2">Estremoz</span></div>
-    </div>
-    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="120">
-      <img src="images/casa-banho.jpg" alt="Remodelação de casa de banho - Estremoz">
-      <div class="galeria-caption"><span class="tag2">Casa de Banho</span><span class="title2">Estremoz</span></div>
-    </div>
-  </div>
+  <div class="galeria-grid" id="galeriaGrid"></div>
 </section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Foto anterior">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Foto seguinte">&#8250;</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="lightbox-count" id="lightboxCount"></div>
+</div>
 
 <section class="area" data-aos="fade-up">
   <div class="eyebrow">Área de Atuação</div>
@@ -468,6 +489,102 @@
       entries.forEach(function(entry){ if(entry.isIntersecting) runCounters(); });
     }, { threshold: 0.4 });
     obs.observe(statsSection);
+  }
+
+  var galeriaImages = [
+    { file: 'construcao.jpg', caption: 'Casa de banho com lavatório em pedra natural' },
+    { file: 'casa-banho.jpg', caption: 'Duche em mosaico branco' },
+    { file: 'foto-01.jpg', caption: 'Teto e paredes antes da obra de recuperação' },
+    { file: 'foto-02.jpg', caption: 'Corredor em fase de acabamento' },
+    { file: 'foto-03.jpg', caption: 'Casa de banho concluída — sanitários e revestimento' },
+    { file: 'foto-04.jpg', caption: 'Duche embutido com torneira e acabamento dourado' },
+    { file: 'foto-05.jpg', caption: 'Muro exterior em construção' },
+    { file: 'foto-06.jpg', caption: 'Estrutura de suporte em betão — obra exterior' },
+    { file: 'foto-07.jpg', caption: 'Pavimento em grés efeito mármore' },
+    { file: 'foto-08.jpg', caption: 'Recolha de entulhos em obra' },
+    { file: 'foto-09.jpg', caption: 'Ampliação exterior em bloco — fase de construção' },
+    { file: 'foto-10.jpg', caption: 'Pormenor de revestimento cerâmico' },
+    { file: 'foto-11.jpg', caption: 'Construção de reservatório em zona rural' },
+    { file: 'foto-12.jpg', caption: 'Revestimento em pedra decorativa — interior' },
+    { file: 'foto-13.jpg', caption: 'Base de duche em mosaico' },
+    { file: 'foto-14.jpg', caption: 'Piscina em fase de acabamento — vista aérea' },
+    { file: 'foto-16.jpg', caption: 'Piscina revestida — acabamento em mosaico' },
+    { file: 'foto-17.jpg', caption: 'Casa de banho de serviço concluída' },
+    { file: 'foto-18.jpg', caption: 'Divisória de duche em vidro' },
+    { file: 'foto-19.jpg', caption: 'Impermeabilização de terraço' },
+    { file: 'foto-20.jpg', caption: 'Terreno preparado para nova obra' },
+    { file: 'foto-21.jpg', caption: 'Equipa 7 Ofícios em obra' },
+    { file: 'foto-22.jpg', caption: 'Piscina em construção — aplicação de mosaico' },
+    { file: 'foto-23.jpg', caption: 'Banheira instalada — remodelação em curso' },
+    { file: 'foto-24.jpg', caption: 'Telhado antigo antes da manutenção' },
+    { file: 'foto-25.jpg', caption: 'Churrasqueira de exterior construída' },
+    { file: 'foto-26.jpg', caption: 'Base de duche moderna em mosaico' },
+    { file: 'foto-27.jpg', caption: 'Estrutura de churrasqueira em fase de construção' },
+    { file: 'foto-28.jpg', caption: 'Telhado novo em telha cerâmica' },
+    { file: 'foto-29.jpg', caption: 'Cozinha antes da remodelação — infraestruturas à vista' },
+    { file: 'foto-30.jpg', caption: 'Isolamento térmico de cobertura plana' },
+    { file: 'foto-31.jpg', caption: 'Estrutura de telhado em construção' },
+    { file: 'foto-32.jpg', caption: 'Revestimento em pedra — muro exterior' },
+    { file: 'foto-33.jpg', caption: 'Piscina concluída — pronta a encher' },
+    { file: 'foto-34.jpg', caption: 'Instalação de clarabóia em curso' },
+    { file: 'foto-15.jpg', caption: 'Clarabóias instaladas — vista exterior' },
+    { file: 'foto-35.jpg', caption: 'Clarabóias instaladas — vista interior' }
+  ];
+
+  var galeriaGrid = document.getElementById('galeriaGrid');
+  if (galeriaGrid) {
+    galeriaImages.forEach(function(entry, i){
+      var alt = entry.caption + ' — 7 Ofícios, Estremoz';
+      var item = document.createElement('div');
+      item.className = 'galeria-item';
+      item.setAttribute('data-aos', 'zoom-in');
+      item.setAttribute('data-aos-delay', String((i % 4) * 80));
+      item.innerHTML =
+        '<img src="images/' + entry.file + '" alt="' + alt + '" loading="' + (i < 6 ? 'eager' : 'lazy') + '">' +
+        '<div class="zoom-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>' +
+        '<div class="galeria-caption">' + entry.caption + '</div>';
+      item.addEventListener('click', function(){ openLightbox(i); });
+      galeriaGrid.appendChild(item);
+    });
+  }
+
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCount = document.getElementById('lightboxCount');
+  var lightboxCaption = document.getElementById('lightboxCaption');
+  var lightboxIndex = 0;
+
+  function openLightbox(i){
+    lightboxIndex = i;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function updateLightbox(){
+    var entry = galeriaImages[lightboxIndex];
+    lightboxImg.src = 'images/' + entry.file;
+    lightboxImg.alt = entry.caption + ' — 7 Ofícios, Estremoz';
+    lightboxCaption.textContent = entry.caption;
+    lightboxCount.textContent = (lightboxIndex + 1) + ' / ' + galeriaImages.length;
+  }
+  function nextImage(){ lightboxIndex = (lightboxIndex + 1) % galeriaImages.length; updateLightbox(); }
+  function prevImage(){ lightboxIndex = (lightboxIndex - 1 + galeriaImages.length) % galeriaImages.length; updateLightbox(); }
+
+  if (lightbox) {
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxNext').addEventListener('click', nextImage);
+    document.getElementById('lightboxPrev').addEventListener('click', prevImage);
+    lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function(e){
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+    });
   }
 
   var form = document.getElementById('orcamentoForm');
